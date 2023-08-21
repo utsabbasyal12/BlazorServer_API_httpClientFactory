@@ -1,0 +1,42 @@
+﻿@page "/"
+@using BlazorServerUI.Services;
+@using ModelLibrary.Model;
+@inject IGameService gameService;
+
+<PageTitle>Index</PageTitle>
+
+<h1>Game List</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Game Name</th>
+            <th>No Of Players</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in gameList)
+        {
+            <tr>
+                <td>@item.GameId</td>
+                <td>@item.GameName</td>
+                <td>@item.NumberOfPlayers</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@code {
+    private List<GameModel> gameList = new List<GameModel>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetGames();
+    }
+    private async Task GetGames()
+    {
+        gameList = await gameService.GetAllGamesAsync();
+    }
+}
