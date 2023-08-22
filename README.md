@@ -31,3 +31,7 @@ Steps:
   8. Rest of the code is same and don't forget to add HttpClient
 
 ![image](https://github.com/utsabbasyal12/BlazorServer_API_httpClientFactory/assets/45966409/8aeacf61-0671-410f-8030-47603f69e066)
+
+  9. The UI services look like this
+
+![image](https://github.com/utsabbasyal12/BlazorServer_API_httpClientFactory/assets/45966409/ce40e79b-faa5-45e4-8120-9e0e1ce329b5)
